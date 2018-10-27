@@ -1,5 +1,4 @@
 'use strict';
-import { words } from './locales/dictionary';
 
 $.fn.l10n = function(options) {
     const that = this;
@@ -7,7 +6,7 @@ $.fn.l10n = function(options) {
     let params = $.extend({
         lang: 'en',
         dynamicLang: false,
-        dictList: words
+        dictList: []
     }, options);
 
     // Defining Language
@@ -59,6 +58,8 @@ $.fn.l10n = function(options) {
         });
     };
 
+
+    document.querySelector('html').setAttribute('lang', language);
     that.translate();
     return that;
 

@@ -1,4 +1,4 @@
-# jQuery L18N
+# jQuery L10N
 
 A jQuery plugin that give you a eazy way, yet efficient to translate you static website easily.
 
@@ -66,14 +66,14 @@ The last thing is to mark text to be translated
     <p class="gettext">Hello World!</p>
 ```
 
+That's it, no more complexity.
+
+you can also use it via javascript code
 ### javascript
 ```javascript
     const hello_word = l10n.getText('Hello World!');
     // hello_world = 'こんにちは世界'
 ```
-
-That's it, no more complexity.
-
 
 ## Options
 
