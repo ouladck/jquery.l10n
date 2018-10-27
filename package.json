@@ -1,6 +1,6 @@
 {
   "name": "jquery.l10n",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple localisation jQuery plugin, that can be used in static sites.",
   "main": "jquery.l10n.js",
   "scripts": {
