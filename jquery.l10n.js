@@ -1,0 +1,65 @@
+'use strict';
+import { words } from './locales/dictionary';
+
+$.fn.l10n = function(options) {
+    const that = this;
+    let dict = {};
+    let params = $.extend({
+        lang: 'en',
+        dynamicLang: false,
+        dictList: words
+    }, options);
+
+    // Defining Language
+    let language = params.lang;
+    if (params.dynamicLang) {
+        language = (localStorage.getItem('lang')) ? localStorage.getItem('lang') : navigator.language.substr(0, 2);
+    }
+    if (params.dictList.hasOwnProperty(language)) {
+        dict = params.dictList[language];
+    } else {
+        console.log(`You don't has the vriable '${language}' in the 'dictionary.js', you may create it first\nYou can check our documetation to get more informations here https://github.com/karim88/jquery.l10n`);
+    }
+
+    /**
+     * get Translated text
+     * @param text
+     * @returns text
+     */
+    this.getText = (text) => {
+        return dict[text] || text;
+    }
+
+    /**
+     * Change lang html attribute & local storage one
+     * @param lang
+     */
+    this.setLanguage = (lang, reload = false) => {
+        document.querySelector('html').setAttribute('lang', lang);
+        localStorage.setItem('lang', lang);
+        if (reload) {
+            location.reload();
+        }
+    };
+
+    /**
+     * Translate the whole website
+     */
+    this.translate = () => {
+        that.each((index, element) => {
+            // Check Html element
+            if (dict[element.innerHTML.trim()]) {
+                element.innerHTML = dict[element.innerHTML.trim()];
+            }
+            // Check Placeholder attribute
+            if (element.getAttribute('placeholder')) {
+                element.setAttribute('placeholder', dict[element.getAttribute('placeholder').trim()]);
+            }
+                
+        });
+    };
+
+    that.translate();
+    return that;
+
+}

@@ -1,0 +1,28 @@
+{
+  "name": "jquery.l10n",
+  "description": "A simple localisation jQuery plugin, that can be used in static sites.",
+  "main": "jquery.l10n.js",
+  "authors": [
+    "Karim Oulad Chalha <karim@karimoc.me>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "l10n",
+    "i18n",
+    "gettext",
+    "localisation",
+    "localization",
+    "translation",
+    "internationalization",
+    "internationalisation",
+    "translate"
+  ],
+  "homepage": "https://github.com/karim88/jquery.l10n",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
