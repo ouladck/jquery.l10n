@@ -12,7 +12,7 @@ A jQuery plugin that give you a eazy way, yet efficient to translate you static 
 
 ### Via Bower
 ```
-    bower install jquery.l10n
+    bower install jquery.l10n --save
 ```
 
 <hr>
