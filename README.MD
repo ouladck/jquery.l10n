@@ -19,9 +19,9 @@ A jQuery plugin that give you a eazy way, yet efficient to translate you static 
 
 Thaught you can clone it:
 ```
-    git clone git://github.com/karim88/jquery.l10n.git
+    git clone git@github.com:karim88/jquery.l10n.git
 ```
-or download it from [here](http://github.com/karim88/jquery.l10n/master.zip)
+or download it from [here](https://github.com/karim88/jquery.l10n/archive/master.zip)
 
 ## Usage
 
