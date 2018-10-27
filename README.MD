@@ -2,6 +2,11 @@
 
 A jQuery plugin that give you a eazy way, yet efficient to translate you static website easily.
 
+
+
+![demo](demo.gif)
+
+
 ## Install
 
 ### Via NPM
