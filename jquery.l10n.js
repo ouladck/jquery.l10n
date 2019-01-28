@@ -17,7 +17,7 @@ $.fn.l10n = function(options) {
     if (params.dictList.hasOwnProperty(language)) {
         dict = params.dictList[language];
     } else {
-        console.log(`You don't has the vriable '${language}' in the 'dictionary.js', you may create it first\nYou can check our documetation to get more informations here https://github.com/karim88/jquery.l10n`);
+        console.log(`You don't has the variable '${language}' in the 'dictionary.js', you may create it first\nYou can check our documetation to get more informations here https://github.com/karim88/jquery.l10n`);
     }
 
     /**
