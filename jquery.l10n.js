@@ -5,14 +5,15 @@ $.fn.l10n = function(options) {
     let dict = {};
     let params = $.extend({
         lang: 'en',
-        dynamicLang: false,
         dictList: []
     }, options);
 
     // Defining Language
     let language = params.lang;
-    if (params.dynamicLang) {
+    if (localStorage.getItem('lang')) {
         language = (localStorage.getItem('lang')) ? localStorage.getItem('lang') : navigator.language.substr(0, 2);
+    } else {
+        localStorage.setItem('lang', language);
     }
     if (params.dictList.hasOwnProperty(language)) {
         dict = params.dictList[language];
@@ -27,18 +28,17 @@ $.fn.l10n = function(options) {
      */
     this.getText = (text) => {
         return dict[text] || text;
-    }
+    };
 
     /**
      * Change lang html attribute & local storage one
      * @param lang
      */
-    this.setLanguage = (lang, reload = false) => {
+    this.setLanguage = (lang) => {
         document.querySelector('html').setAttribute('lang', lang);
         localStorage.setItem('lang', lang);
-        if (reload) {
-            location.reload();
-        }
+
+        location.reload();
     };
 
     /**

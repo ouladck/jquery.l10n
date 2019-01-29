@@ -52,14 +52,14 @@ Create a dictionary variable, then initialize the plugin
             "Hello world!": "Bonjour monde",
             ...
         },
-        ja: {
+        jp: {
             "Hello world!": "こんにちは世界",
             ...
         }
     };
 
     const l10n = $('.gettext').l10n({
-        lang: 'ja',
+        lang: 'jp',
         dictList: words
     });
 ```
@@ -83,29 +83,17 @@ you can also use it via javascript code
 ## Options
 
 ```javascript
-    $(selector).l10n{
+    $(selector).l10n({
         lang: 'en',
-        dynamicLang: false,
         dictList: words
-    }
+    });
 ```
 
 * The `selector` can be any CSS selector `.class`, `#id`, `[attribute]`, But not recommended to use CSS `elements` or `:pseudo-classes`
 
 * lang: Code for the language to be translated to.<br>
 default: `en`
-
-* dynamicLang: if this option is set to `true` it will get `localStorage` `lang` item value `localStorage.getitem('lang')`
-, If not found, it will use html lang attribute value `<html lang="en">`<br>,
-and if set `true` it will override `lang` option so you don't need set it value example:
-    ```javascript
-    $(selector).l10n{
-        dynamicLang: true,
-        dictList: words
-    }
-    ``` 
-    default: false
-
+> lang will be used in the first run or when localStorage is empty.
 * dictList: The set of dictionaries of words and sentence to be used in the plugin.
 
 ## Methods
@@ -127,13 +115,12 @@ This function gets your desired text and translates it, if it's translation exis
 
 ### setLanguage
 
-This function is only needed when `dynamicLang` option set to `true` so that you can change your language or via you JS script.
+This function is needed so that you can change your language via you JS script.
 
 #### Paramters
 
 * lang: A string with you desired language code.
-* reload (optional): To decide if you wish this function to reload the page or not.
 
 ```javascript
-    l10n.setLanguage('ar', false);
+    l10n.setLanguage('ar');
 ```
